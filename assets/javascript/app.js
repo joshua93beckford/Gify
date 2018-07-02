@@ -3,7 +3,7 @@ $(document).ready(function () {
     var topics = [
         {
             catName: "Animals",
-            topicItems: ["Dog", "Cat", "Fish", "Frog", "Whale", "Shark", "Garraff", "Rhino", "Lion", "Bird", "Ferret"]
+            topicItems: ["Dog", "Cat", "Fish", "Frog", "Whale", "Shark", "Rhino", "Lion", "Bird", "Ferret"]
         }, {
             catName: "Cars",
             topicItems: ["BMW", "Mercedes Benz", "Audi", "Subaru", "Honda", "Lamborghini", "Bently", "Kia", "Jeep", "Chevorlet"]
