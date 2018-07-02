@@ -2,9 +2,30 @@
 $(document).ready(function () {
     var topics = [
         {
+            catName: "Animals",
+            topicItems: ["Dog", "Cat", "Fish", "Frog", "Whale", "Shark", "Garraff", "Rhino", "Lion", "Bird", "Ferret"]
+        }, {
+            catName: "Cars",
+            topicItems: ["BMW", "Mercedes Benz", "Audi", "Subaru", "Honda", "Lamborghini", "Bently", "Kia", "Jeep", "Chevorlet"]
+        },
+        {
+            catName: "Coutniries",
+            topicItems: ["Canada", "United States", "Cuba", "Russia", "China", "Mexico", "Brazil", "France", "Spain", "Germany"]
+        },
+        {
+            catName: "Drinks",
+            topicItems: ["Coca Cola", "Pepsi", "Root Beer", "Sprite", "Beer", "Wine", "Orange Juice", "Apple Juice", "Cream Soda"] 
+        },
+        {
             catName: "Rappers",
             topicItems: ["Wiz Khalifa", "Meek Mill", "Lil Wayne", "Rick Ross", "Chevy Woods", "French Montana", "50 Cent", "Snoop Dogg", "Cardi B", "Eminem", "Tupac Shakur", "Biggie Smalls", "Gucci Maine"]
-        },];
+        },
+        {
+            catName: "TV Shows",
+            topicItems: ["Rick And Morty", "Silicon Valley", "Stranger Things", "Impratical Jokers", "Family Guy", "American Dad", "South Park"]
+        }
+    ];
+
     var apiKey = "Ol4MVWEIY6xzBicUCeSYwdWGcpSaEz6W";
     var limit = 9;
     var tempARR = new Array();
@@ -48,7 +69,7 @@ $(document).ready(function () {
         var v = $(this).attr("id");
         init(v);
     });
-    
+
     $("body").on("click", ".gifs", function () {
 
         $("#showGIF").empty();
@@ -61,6 +82,8 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
 
+
+
             for (var i = 0; i < response.data.length; i++) {
                 tempIMG = $("<img>");
                 tempIMG.attr("src", response.data[i].images.fixed_height_still.url);
@@ -70,11 +93,9 @@ $(document).ready(function () {
                 tempIMG.attr("data-still", response.data[i].images.fixed_height_still.url);
                 tempIMG.appendTo("#showGIF");
             }
-           
         });
-
     });
-    $("body").on("click",".gif", function () {
+    $("body").on("click", ".gif", function () {
 
         // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
         var state = $(this).attr("data-state");
@@ -93,7 +114,7 @@ $(document).ready(function () {
 
         var n = tempARR.indexOf($(this).attr("category"));
         var tempVAL = $("#addIN").val().trim();
-        
+
         if (tempVAL !== "" && $(this).attr("category") != null && $.inArray(tempVAL, topics[n].topicItems) == -1) {
             topics[n].topicItems.push(tempVAL);
             init(n);
