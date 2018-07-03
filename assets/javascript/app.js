@@ -75,7 +75,7 @@ $(document).ready(function () {
         $("#showGIF").empty();
 
         var whichTopic = $(this).attr("id");
-        var queryURL = encodeURI("http://api.giphy.com/v1/gifs/search?q=" + whichTopic + "&api_key=" + apiKey + "&limit=" + limit);
+        var queryURL = encodeURI("https://api.giphy.com/v1/gifs/search?q=" + whichTopic + "&api_key=" + apiKey + "&limit=" + limit);
 
         $.ajax({
             url: queryURL,
