@@ -9,7 +9,7 @@ $(document).ready(function () {
             topicItems: ["BMW", "Mercedes Benz", "Audi", "Subaru", "Honda", "Lamborghini", "Bently", "Kia", "Jeep", "Chevorlet"]
         },
         {
-            catName: "Coutniries",
+            catName: "Countries",
             topicItems: ["Canada", "United States", "Cuba", "Russia", "China", "Mexico", "Brazil", "France", "Spain", "Germany"]
         },
         {
