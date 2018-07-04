@@ -85,7 +85,7 @@ $(document).ready(function () {
             for (var i = 0; i < response.data.length; i++) {
                
                 tempD = $('<div class="con"></div>')
-                tempR = $("<p>").text("Rating: " + response.data[i].rating);
+                tempR = $("<h1>").text("Rating: " + response.data[i].rating);
                 tempR.appendTo(tempD);
                 tempIMG = $("<img>");
                 tempIMG.attr("src", response.data[i].images.fixed_height_still.url);
