@@ -14,7 +14,7 @@ $(document).ready(function () {
         },
         {
             catName: "Drinks",
-            topicItems: ["Coca Cola", "Pepsi", "Root Beer", "Sprite", "Beer", "Wine", "Orange Juice", "Apple Juice", "Cream Soda"] 
+            topicItems: ["Coca Cola", "Pepsi", "Root Beer", "Sprite", "Beer", "Wine", "Orange Juice", "Apple Juice", "Cream Soda"]
         },
         {
             catName: "Rappers",
@@ -82,16 +82,19 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
 
-
-
             for (var i = 0; i < response.data.length; i++) {
+               
+                tempD = $('<div class="con"></div>')
+                tempR = $("<p>").text("Rating: " + response.data[i].rating);
+                tempR.appendTo(tempD);
                 tempIMG = $("<img>");
                 tempIMG.attr("src", response.data[i].images.fixed_height_still.url);
                 tempIMG.attr("class", "gif");
                 tempIMG.attr("data-state", "still");
                 tempIMG.attr("data-animate", response.data[i].images.fixed_height.url);
                 tempIMG.attr("data-still", response.data[i].images.fixed_height_still.url);
-                tempIMG.appendTo("#showGIF");
+                tempIMG.appendTo(tempD);
+                tempD.appendTo("#showGIF");
             }
         });
     });
